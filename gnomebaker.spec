@@ -14,6 +14,7 @@ BuildRequires:	automake
 BuildRequires:	gtk+2-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel
+BuildRequires:	libtool
 BuildRequires:	libvorbis-devel
 Requires:	cdrtools
 Requires:	cdrtools-cdda2wav
