@@ -1,0 +1,19 @@
+diff -aurN gnomebaker-0.2.orig/gnomebaker.desktop.in gnomebaker-0.2/gnomebaker.desktop.in
+--- gnomebaker-0.2.orig/gnomebaker.desktop.in	2004-10-30 01:42:12.000000000 +0200
++++ gnomebaker-0.2/gnomebaker.desktop.in	2004-11-28 13:05:49.158396600 +0100
+@@ -1,11 +1,11 @@
+-
+ [Desktop Entry]
++Encoding=UTF-8
+ Name=GnomeBaker
+-Comment=GnomeBaker
++Comment=Program for creating CDs
+ Exec=gnomebaker
+-Icon=@PACKAGE_PIXMAPS_DIR@/gnomebaker-48.png 
++Icon=gnomebaker.png 
+ Terminal=false
+ MultipleArgs=false
+ Type=Application
+-Categories=Application;Utility;
++Categories=GTK;GNOME;Utility;DiscBurning;
+ StartupNotify=true
