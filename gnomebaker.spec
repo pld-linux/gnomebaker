@@ -2,8 +2,8 @@ Summary:	GNOME program for creating CDs
 Summary(pl):	Program dla GNOME do nagrywania p³yt CD
 Name:		gnomebaker
 Version:	0.3
-Release:	1
-License:	GPL v.2
+Release:	2
+License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://biddell.co.uk/files/%{name}-%{version}.tar.gz
 # Source0-md5:	dd8276d35a0a3e31b3c16e136b079f83
@@ -24,7 +24,7 @@ Requires:	cdrtools-mkisofs
 Requires:	cdrtools-readcd
 Requires:	mpg123
 Requires:	vorbis-tools
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,8 +64,13 @@ install pixmaps/gnomebaker-48.png \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /usr/bin/scrollkeeper-update
-%postun	-p /usr/bin/scrollkeeper-update
+%post
+/usr/bin/scrollkeeper-update -q
+
+%postun
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -74,5 +79,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_desktopdir}/*
 %{_omf_dest_dir}/%{name}
-%{_omf_dest_dir}/*
 %{_pixmapsdir}/*
