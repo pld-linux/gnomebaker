@@ -11,11 +11,13 @@ Patch0:		%{name}-desktop.patch
 URL:		http://biddell.co.uk/gnomebaker.php
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel
+BuildRequires:	pkgconfig
 Requires:	cdrtools
 Requires:	cdrtools-cdda2wav
 Requires:	cdrtools-mkisofs
