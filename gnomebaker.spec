@@ -24,6 +24,7 @@ Requires:	cdrtools-mkisofs
 Requires:	cdrtools-readcd
 Requires:	mpg123
 Requires:	vorbis-tools
+Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,6 +38,7 @@ GnomeBaker jest programem dla GNOME do nagrywania CD.
 %patch0 -p1
 
 %build
+##cp /usr/share/gnome-common/data/omf.make .
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
@@ -57,13 +59,20 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install pixmaps/gnomebaker-48.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/gnomebaker.png
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%post	-p /usr/bin/scrollkeeper-update
+%postun	-p /usr/bin/scrollkeeper-update
+
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_desktopdir}/*
+%{_omf_dest_dir}/%{name}
+%{_omf_dest_dir}/*
 %{_pixmapsdir}/*
