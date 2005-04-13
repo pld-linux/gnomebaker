@@ -2,7 +2,7 @@ Summary:	GNOME program for creating CDs
 Summary(pl):	Program dla GNOME do nagrywania p³yt CD
 Name:		gnomebaker
 Version:	0.3
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://biddell.co.uk/files/%{name}-%{version}.tar.gz
@@ -18,12 +18,7 @@ BuildRequires:	libgnomeui-devel
 BuildRequires:	libtool
 BuildRequires:	libvorbis-devel
 BuildRequires:	pkgconfig
-Requires:	cdrtools
-Requires:	cdrtools-cdda2wav
-Requires:	cdrtools-mkisofs
-Requires:	cdrtools-readcd
-Requires:	mpg123
-Requires:	vorbis-tools
+BuildRequires:	rpmbuild(macros) >= 1.197
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,7 +33,6 @@ GnomeBaker jest programem dla GNOME do nagrywania CD.
 %patch0 -p1
 
 %build
-##cp /usr/share/gnome-common/data/omf.make .
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
@@ -65,12 +59,22 @@ install pixmaps/gnomebaker-48.png \
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/bin/scrollkeeper-update -q
+%scrollkeeper_update_post
+%banner %{name} -e << EOF
+Suggested packages for use with Gnomebaker:
+for CD recording
+- cdrdao
+- cdrtools
+- cdrtools-mkisofs
+- cdrtools-readcd
+for operations on audio files
+- mpg123
+- sox
+- vorbis-tools
+EOF
 
 %postun
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
