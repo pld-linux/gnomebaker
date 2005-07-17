@@ -4,7 +4,8 @@
  [Desktop Entry]
 +Encoding=UTF-8
  Name=GnomeBaker
- Comment=GnomeBaker
+-Comment=GnomeBaker
++Comment=Program for creating CDs
 +Comment[pl]=Program do tworzenia CD
  GenericName=CD Writer
  Exec=gnomebaker
