@@ -8,7 +8,7 @@ Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.gz
 # Source0-md5:	e332a2eef87290916b8364f8cb96ca4d
 Patch0:		%{name}-desktop.patch
-URL:		http://biddell.co.uk/gnomebaker.php
+URL:		http://gnomebaker.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
