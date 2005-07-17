@@ -4,8 +4,7 @@
  [Desktop Entry]
 +Encoding=UTF-8
  Name=GnomeBaker
--Comment=GnomeBaker
-+Comment=Program for creating CDs
+ Comment=GnomeBaker
 +Comment[pl]=Program do tworzenia CD
  GenericName=CD Writer
  Exec=gnomebaker
@@ -14,6 +13,6 @@
  Terminal=false
  MultipleArgs=false
  Type=Application
--Categories=Application;AudioVideo;
-+Categories=GTK;GNOME;Utility;DiscBurning;
+-Categories=Application;Utility;
++Categories=GTK;GNOME;AudioVideo;DiscBurning;
  StartupNotify=true
