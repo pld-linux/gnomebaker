@@ -2,7 +2,7 @@ Summary:	GNOME program for creating CDs
 Summary(pl):	Program dla GNOME do nagrywania p³yt CD
 Name:		gnomebaker
 Version:	0.4
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.gz
@@ -63,6 +63,8 @@ install pixmaps/gnomebaker-48.png \
 
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,sv_SE}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nl{_NL,}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
+
 %find_lang %{name}
 
 %clean
