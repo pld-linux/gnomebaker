@@ -1,19 +1,20 @@
---- gnomebaker-0.3/gnomebaker.desktop.in.orig	2005-02-05 22:16:47.000000000 +0100
-+++ gnomebaker-0.3/gnomebaker.desktop.in	2005-03-15 23:50:42.211792624 +0100
+diff -aurN gnomebaker-0.4.1.orig/gnomebaker.desktop.in gnomebaker-0.4.1/gnomebaker.desktop.in
+--- gnomebaker-0.4.1.orig/gnomebaker.desktop.in	2005-08-14 23:34:07.000000000 +0200
++++ gnomebaker-0.4.1/gnomebaker.desktop.in	2005-08-16 16:48:48.000000000 +0200
 @@ -1,11 +1,13 @@
  [Desktop Entry]
 +Encoding=UTF-8
  Name=GnomeBaker
--Comment=GnomeBaker
-+Comment=Program for creating CDs
-+Comment[pl]=Program do tworzenia CD
- GenericName=CD Writer
+-Comment=GnomeBaker CD/DVD Writer
++Comment=Program for creating CDs/DVDs
++Comment[pl]=Program do tworzenia CD/DVD
+ GenericName=CD/DVD Writer
  Exec=gnomebaker
 -Icon=@PACKAGE_PIXMAPS_DIR@/gnomebaker-48.png
 +Icon=gnomebaker.png
  Terminal=false
  MultipleArgs=false
  Type=Application
--Categories=Application;Utility;
+-Categories=Application;AudioVideo;DiscBurning;
 +Categories=GTK;GNOME;AudioVideo;DiscBurning;
  StartupNotify=true
