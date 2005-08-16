@@ -1,12 +1,12 @@
 Summary:	GNOME program for creating CDs
 Summary(pl):	Program dla GNOME do nagrywania p³yt CD
 Name:		gnomebaker
-Version:	0.4
-Release:	2
+Version:	0.4.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.gz
-# Source0-md5:	e332a2eef87290916b8364f8cb96ca4d
+# Source0-md5:	11bd141fc1f3a52729c4baeff3578899
 Patch0:		%{name}-desktop.patch
 URL:		http://gnomebaker.sourceforge.net/
 BuildRequires:	autoconf
@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper
 Requires(post,postun):	scrollkeeper
+Requires:	gstreamer-gnomevfs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +36,6 @@ GnomeBaker jest programem dla GNOME do nagrywania CD.
 %patch0 -p1
 # these seem to be more up-to-date
 cp -f po/es{_ES,}.po
-cp -f po/fr{_FR,}.po
 # this one is not so obvious...
 # cp -f po/sv{_SE,}.po
 rm -f po/*.gmo
@@ -77,12 +77,14 @@ Suggested packages for use with Gnomebaker:
 for CD recording
 - cdrdao
 - cdrtools
+- cdrtools-cdda2wav
 - cdrtools-mkisofs
 - cdrtools-readcd
+- dvd+rw-tools
 for operations on audio files
-- mpg123
-- sox
-- vorbis-tools
+- gstreamer-flac
+- gstreamer-mad
+- gstreamer-vorbis
 EOF
 
 %postun
