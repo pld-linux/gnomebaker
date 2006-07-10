@@ -1,19 +1,22 @@
 Summary:	GNOME program for creating CDs
 Summary(pl):	Program dla GNOME do nagrywania p³yt CD
 Name:		gnomebaker
-Version:	0.5.1
-Release:	2
+Version:	0.5.2
+%define snap 20060710
+Release:	0.%{snap}.1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.bz2
-# Source0-md5:	45aef11c945904edc9fcf73e40eb2785
+#Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{snap}.tar.gz
+# Source0-md5:	6c3c9dc5133dbdc0c2d07d7f47c3456e
 Patch0:		%{name}-desktop.patch
 URL:		http://gnomebaker.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gstreamer08x-devel
+BuildRequires:	gstreamer-devel
 BuildRequires:	gtk+2-devel
+BuildRequires:	intltool
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libtool
@@ -21,7 +24,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper
 Requires(post,postun):	scrollkeeper
-Requires:	gstreamer08x-gnomevfs
+Requires:	gstreamer-gnomevfs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +34,7 @@ GnomeBaker is a GNOME CD burning application.
 GnomeBaker jest programem dla GNOME do nagrywania CD.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{snap}
 %patch0 -p1
 # these seem to be more up-to-date
 cp -f po/es{_ES,}.po
@@ -41,6 +44,7 @@ rm -f po/*.gmo
 
 %build
 %{__libtoolize}
+%{__intltoolize}
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
@@ -81,9 +85,9 @@ for CD recording
 - cdrtools-readcd
 - dvd+rw-tools
 for operations on audio files
-- gstreamer08x-flac
-- gstreamer08x-mad
-- gstreamer08x-vorbis
+- gstreamer-flac
+- gstreamer-mad
+- gstreamer-vorbis
 EOF
 
 %postun
