@@ -19,6 +19,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel
+BuildRequires:	libnotify-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -49,7 +50,8 @@ rm -f po/*.gmo
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--enable-libnotify
 %{__make}
 
 %install
@@ -68,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,sv_SE}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nl{_NL,}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
