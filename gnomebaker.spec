@@ -1,14 +1,13 @@
 Summary:	GNOME program for creating CDs
 Summary(pl):	Program dla GNOME do nagrywania p³yt CD
 Name:		gnomebaker
-Version:	0.5.2
-%define snap 20060710
-Release:	0.%{snap}.1
+Version:	0.6.0
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
-#Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{snap}.tar.gz
-# Source0-md5:	6c3c9dc5133dbdc0c2d07d7f47c3456e
+#http://mesh.dl.sourceforge.net/sourceforge/gnomebaker/gnomebaker-0.6.0.tar.gz
+Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.gz
+# Source0-md5:	351363497017121d3a1d43b0e3a0f515
 Patch0:		%{name}-desktop.patch
 URL:		http://gnomebaker.sourceforge.net/
 BuildRequires:	autoconf
@@ -35,8 +34,8 @@ GnomeBaker is a GNOME CD burning application.
 GnomeBaker jest programem dla GNOME do nagrywania CD.
 
 %prep
-%setup -q -n %{name}-%{snap}
-%patch0 -p1
+%setup -q -n %{name}-%{version}
+%patch0 -p0
 # these seem to be more up-to-date
 cp -f po/es{_ES,}.po
 # this one is not so obvious...
@@ -66,7 +65,7 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install pixmaps/gnomebaker-48.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/gnomebaker.png
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,sv_SE}
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,sv_SE,de_CH,es_CO,es_CR,eu_ES,fr_CH,it_IT,nb,nl,pt_PT,zh,de_DE} #FIXME
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nl{_NL,}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 

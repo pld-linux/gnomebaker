@@ -1,5 +1,5 @@
---- gnomebaker-0.5.1/gnomebaker.desktop.in.orig	2006-01-09 00:54:11.000000000 +0100
-+++ gnomebaker-0.5.1/gnomebaker.desktop.in	2006-03-01 02:26:05.339700250 +0100
+--- gnomebaker.desktop.in.orig	2006-09-21 19:13:23.000000000 +0200
++++ gnomebaker.desktop.in	2006-09-21 19:19:44.000000000 +0200
 @@ -2,12 +2,14 @@
  Name=GnomeBaker
  GenericName=CD/DVD Writer
@@ -9,11 +9,11 @@
  Comment[da]=Brænd CD og DVD
 +Comment[pl]=Program do tworzenia CD/DVD
  Exec=gnomebaker
--Icon=@prefix@/share/gnomebaker/gnomebaker-48.png
+-Icon=gnomebaker-48
 +Icon=gnomebaker.png
  Terminal=false
  Type=Application
 -Categories=Application;AudioVideo;DiscBurning;
-+Categories=GTK;GNOME;AudioVideo;DiscBurning;
++Categories=GTK;GNOME;AudioVideo;DiscBurining
  StartupNotify=true
  Encoding=UTF-8
