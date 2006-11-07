@@ -99,6 +99,6 @@ EOF
 %doc ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/*
