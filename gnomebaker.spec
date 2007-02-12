@@ -1,5 +1,5 @@
 Summary:	GNOME program for creating CDs
-Summary(pl):	Program dla GNOME do nagrywania p≥yt CD
+Summary(pl.UTF-8):   Program dla GNOME do nagrywania p≈Çyt CD
 Name:		gnomebaker
 Version:	0.6.0
 Release:	0.1
@@ -30,7 +30,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GnomeBaker is a GNOME CD burning application.
 
-%description -l pl
+%description -l pl.UTF-8
 GnomeBaker jest programem dla GNOME do nagrywania CD.
 
 %prep
