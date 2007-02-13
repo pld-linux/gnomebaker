@@ -1,5 +1,5 @@
 Summary:	GNOME program for creating CDs
-Summary(pl.UTF-8):   Program dla GNOME do nagrywania płyt CD
+Summary(pl.UTF-8):	Program dla GNOME do nagrywania płyt CD
 Name:		gnomebaker
 Version:	0.6.0
 Release:	0.1
