@@ -1,13 +1,12 @@
 Summary:	GNOME program for creating CDs
 Summary(pl.UTF-8):	Program dla GNOME do nagrywania płyt CD
 Name:		gnomebaker
-Version:	0.6.0
+Version:	0.6.1
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
-#http://mesh.dl.sourceforge.net/sourceforge/gnomebaker/gnomebaker-0.6.0.tar.gz
 Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.gz
-# Source0-md5:	351363497017121d3a1d43b0e3a0f515
+# Source0-md5:	5ddffd4ae02417a3fd91b08951e7f434
 Patch0:		%{name}-desktop.patch
 URL:		http://gnomebaker.sourceforge.net/
 BuildRequires:	autoconf
