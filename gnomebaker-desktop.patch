@@ -1,19 +1,24 @@
---- gnomebaker.desktop.in.orig	2006-09-21 19:13:23.000000000 +0200
-+++ gnomebaker.desktop.in	2006-09-21 19:19:44.000000000 +0200
-@@ -2,12 +2,14 @@
- Name=GnomeBaker
- GenericName=CD/DVD Writer
- GenericName[da]=CD/DVD-brændeprogram
-+GenericName[pl]=Program do tworzenia CD/DVD
- Comment=Write CD and DVD
+diff -uNr gnomebaker-0.6.2.orig/gnomebaker.desktop.in gnomebaker-0.6.2/gnomebaker.desktop.in
+--- gnomebaker-0.6.2.orig/gnomebaker.desktop.in	2007-09-16 16:36:33.000000000 +0000
++++ gnomebaker-0.6.2/gnomebaker.desktop.in	2007-10-21 03:07:42.000000000 +0000
+@@ -5,16 +5,18 @@
+ Comment=Write/Copy CD and DVD
  Comment[da]=Brænd CD og DVD
+ Comment[lt]=Įrašykite/kopijuokite duomenis, muziką ar video į CD/DVD diskus
 +Comment[pl]=Program do tworzenia CD/DVD
+ Comment[pt_BR]= CD ou DVD
+ GenericName=CD/DVD Writer
+ GenericName[da]=CD/DVD-brÃ¦ndeprogram
+ GenericName[lt]=CD/DVD įrašymas ir kopijavimas
++GenericName[pl]=Program do tworzenia CD/DVD
+ GenericName[pt_BR]=Gravador de CD/DVD
  Exec=gnomebaker
 -Icon=gnomebaker-48
 +Icon=gnomebaker.png
  Terminal=false
+ X-MultipleArgs=false
  Type=Application
--Categories=Application;AudioVideo;DiscBurning;
-+Categories=GTK;GNOME;AudioVideo;DiscBurining
+-Categories=AudioVideo;DiscBurning;
++Categories=GTK;GNOME;AudioVideo;DiscBurining;
  StartupNotify=true
  Encoding=UTF-8
