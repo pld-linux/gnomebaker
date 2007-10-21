@@ -1,12 +1,12 @@
 Summary:	GNOME program for creating CDs
 Summary(pl.UTF-8):	Program dla GNOME do nagrywania płyt CD
 Name:		gnomebaker
-Version:	0.6.1
-Release:	0.1
+Version:	0.6.2
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.gz
-# Source0-md5:	5ddffd4ae02417a3fd91b08951e7f434
+# Source0-md5:	0f9bcc1ff2640b0705c4999dc98dc501
 Patch0:		%{name}-desktop.patch
 URL:		http://gnomebaker.sourceforge.net/
 BuildRequires:	autoconf
@@ -24,6 +24,15 @@ BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper
 Requires(post,postun):	scrollkeeper
 Requires:	gstreamer-gnomevfs
+Suggests:	cdrdao
+Suggests:	cdrtools
+Suggests:	cdrtools-cdda2wav
+Suggests:	cdrtools-mkisofs
+Suggests:	cdrtools-readcd
+Suggests:	dvd+rw-tools
+Suggests:	gstreamer-flac
+Suggests:	gstreamer-mad
+Suggests:	gstreamer-vorbis
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +43,7 @@ GnomeBaker jest programem dla GNOME do nagrywania CD.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p0
+%patch0 -p1
 # these seem to be more up-to-date
 cp -f po/es{_ES,}.po
 # this one is not so obvious...
@@ -101,3 +110,4 @@ EOF
 %{_desktopdir}/*.desktop
 %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/*
+%{_iconsdir}/hicolor/48x48/apps/gnomebaker-48.png
