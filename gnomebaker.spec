@@ -73,8 +73,11 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install pixmaps/gnomebaker-48.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/gnomebaker.png
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,sv_SE,de_CH,es_CO,es_CR,eu_ES,fr_CH,it_IT,nb,nl,pt_PT,zh,de_DE} #FIXME
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,de_CH,es_CR,eu_ES,fr_CH,it,nb,nl,pt,zh,de} #FIXME
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/de{_DE,}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/it{_IT,}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nl{_NL,}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 
 %find_lang %{name} --with-gnome
