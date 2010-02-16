@@ -2,7 +2,7 @@ Summary:	GNOME program for creating CDs
 Summary(pl.UTF-8):	Program dla GNOME do nagrywania płyt CD
 Name:		gnomebaker
 Version:	0.6.2
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomebaker/%{name}-%{version}.tar.gz
@@ -73,12 +73,11 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install pixmaps/gnomebaker-48.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/gnomebaker.png
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,de_CH,es_CR,eu_ES,fr_CH,it,nb,nl,pt,zh,de} #FIXME
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/de{_DE,}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/it{_IT,}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nl{_NL,}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,fr_FR,de_CH,es_CR,eu_ES,fr_CH,it,no,nl,pt,zh,de} #FIXME
+mv $RPM_BUILD_ROOT%{_datadir}/locale/de{_DE,}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/it{_IT,}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/nl{_NL,}
+mv $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
 
 %find_lang %{name} --with-gnome
 
