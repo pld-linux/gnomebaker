@@ -11,7 +11,7 @@ Patch0:		%{name}-desktop.patch
 URL:		http://gnomebaker.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gstreamer-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool
