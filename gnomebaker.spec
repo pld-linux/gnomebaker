@@ -43,7 +43,7 @@ GnomeBaker jest programem dla GNOME do nagrywania CD.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 # these seem to be more up-to-date
 cp -f po/es{_ES,}.po
 # this one is not so obvious...
